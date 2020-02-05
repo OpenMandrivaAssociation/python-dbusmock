@@ -2,7 +2,7 @@
 
 Name:		python-%{module}
 Version:	0.19
-Release:	%mkrel 1
+Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
@@ -13,11 +13,18 @@ BuildArch:	noarch
 BuildRequires:	dbus-x11
 BuildRequires:	upower
 
-BuildRequires:	pkgconfig(python3)
-BuildRequires:	pythonegg(3)(setuptools)
-BuildRequires:	pythonegg(3)(nose)
-BuildRequires:	pythonegg(3)(dbus-python)
-BuildRequires:	pythonegg(3)(pygobject)
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python3dist(setuptools)
+BuildRequires:	python3dist(nose)
+BuildRequires:  python-dbus
+BuildRequires:	pkgconfig(dbus-python)	
+BuildRequires:	pkgconfig(pygobject-3.0)
+BuildRequires:  python3dist(pygobject)
+
+Requires:	dbus-x11
+Requires:	python-dbus
+Requires:	python3dist(pygobject)
+%{?python_provide:%python_provide python-%{module}}
 
 %description
 With this program/Python library you can easily create mock objects on
@@ -25,23 +32,6 @@ D-Bus. This is useful for writing tests for software which talks to
 D-Bus services such as upower, systemd, ConsoleKit, gnome-session or
 others, and it is hard (or impossible without root privileges) to set
 the state of the real services to what you expect in your tests.
-
-%package -n	python3-%{module}
-Summary:	Mock D-Bus objects (in Python3)
-Group:		Development/Python
-Requires:	dbus-x11
-Requires:	pythonegg(3)(dbus-python)
-Requires:	pythonegg(3)(pygobject)
-%{?python_provide:%python_provide python3-%{module}}
-
-%description -n	python3-%{module}
-With this program/Python3 library you can easily create mock objects on
-D-Bus. This is useful for writing tests for software which talks to
-D-Bus services such as upower, systemd, ConsoleKit, gnome-session or
-others, and it is hard (or impossible without root privileges) to set
-the state of the real services to what you expect in your tests.
-
-This is the Python 3 version of the package.
 
 #------------------------------------------------
 
@@ -52,18 +42,12 @@ This is the Python 3 version of the package.
 rm -rf python_%{module}.egg-info
 
 %build
-%py3_build
+%py_build
 
 %install
-%py3_install
+%py_install
 
-%check
-%define enable_tests_python3 0
-%if %{enable_tests_python3}
-%{__python3} setup.py test
-%endif
-
-%files -n python3-%{module}
+%files
 %doc README.rst COPYING
-%{python3_sitelib}/%{module}/
-%{python3_sitelib}/python_%{module}-%{version}-py%{python3_version}.egg-info
+%{python_sitelib}/%{module}/
+%{python_sitelib}/python_%{module}-%{version}-py%{python_version}.egg-info
