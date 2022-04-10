@@ -1,8 +1,8 @@
 %define module	dbusmock
 
 Name:		python-%{module}
-Version:	0.24.0
-Release:	2
+Version:	0.27.5
+Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
@@ -48,6 +48,6 @@ rm -rf python_%{module}.egg-info
 %py_install
 
 %files
-%doc README.rst COPYING
+%doc README.md COPYING
 %{python_sitelib}/%{module}/
 %{python_sitelib}/python_%{module}-%{version}-py%{python_version}.egg-info
