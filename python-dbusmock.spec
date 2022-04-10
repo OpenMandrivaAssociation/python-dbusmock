@@ -48,6 +48,6 @@ rm -rf python_%{module}.egg-info
 %py_install
 
 %files
-%doc README.rst COPYING
+%doc README.md COPYING
 %{python_sitelib}/%{module}/
 %{python_sitelib}/python_%{module}-%{version}-py%{python_version}.egg-info
