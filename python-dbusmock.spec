@@ -1,7 +1,7 @@
 %define module	dbusmock
 
 Name:		python-%{module}
-Version:	0.27.5
+Version:	0.28.4
 Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
