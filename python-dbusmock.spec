@@ -51,4 +51,4 @@ rm -rf python_%{module}.egg-info
 %files
 %doc README.md COPYING
 %{python_sitelib}/%{module}/
-#{python_sitelib}/python_%{module}-%{version}-py%{python_version}.egg-info
+%{python_sitelib}/python_dbusmock-%{version}.dist-info
