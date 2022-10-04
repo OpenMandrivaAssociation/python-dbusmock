@@ -1,7 +1,7 @@
 %define module	dbusmock
 
 Name:		python-%{module}
-Version:	0.27.5
+Version:	0.28.4
 Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
@@ -20,6 +20,7 @@ BuildRequires:  python-dbus
 BuildRequires:	pkgconfig(dbus-python)	
 BuildRequires:	pkgconfig(pygobject-3.0)
 BuildRequires:  python3dist(pygobject)
+BuildRequires:  python3dist(pip)
 
 Requires:	dbus-x11
 Requires:	python-dbus
@@ -50,4 +51,4 @@ rm -rf python_%{module}.egg-info
 %files
 %doc README.md COPYING
 %{python_sitelib}/%{module}/
-%{python_sitelib}/python_%{module}-%{version}-py%{python_version}.egg-info
+%{python_sitelib}/python_dbusmock-%{version}.dist-info
