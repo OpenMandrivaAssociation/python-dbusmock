@@ -1,14 +1,14 @@
 %define module	dbusmock
 
 Name:		python-%{module}
-Version:	0.28.7
-Release:	2
+Version:	0.29.1
+Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
 URL:		http://pypi.python.org/pypi/python-dbusmock
 # http://pypi.io/packages/source/p/%%{name}/%%{name}-%%{version}.tar.gz
-Source0:	https://github.com/martinpitt/python-dbusmock/releases/download/%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/martinpitt/python-dbusmock/releases/download/%{version}/dist.%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	dbus-x11
 BuildRequires:	upower
@@ -37,8 +37,7 @@ the state of the real services to what you expect in your tests.
 #------------------------------------------------
 
 %prep
-%setup -q
-
+%setup -q -n %{name}-%{version}
 # Remove bundled egg-info
 rm -rf python_%{module}.egg-info
 
