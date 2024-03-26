@@ -1,12 +1,12 @@
 %define module	dbusmock
 
 Name:		python-%{module}
-Version:	0.29.1
+Version:	0.31.1
 Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
-URL:		http://pypi.python.org/pypi/python-dbusmock
+URL:		https://pypi.python.org/pypi/python-dbusmock
 # http://pypi.io/packages/source/p/%%{name}/%%{name}-%%{version}.tar.gz
 Source0:	https://github.com/martinpitt/python-dbusmock/releases/download/%{version}/dist.%{name}-%{version}.tar.gz
 BuildArch:	noarch
