@@ -1,7 +1,7 @@
 %define module	dbusmock
 
 Name:		python-%{module}
-Version:	0.32.1
+Version:	0.34.2
 Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
@@ -37,7 +37,7 @@ the state of the real services to what you expect in your tests.
 #------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -n python_%{module}-%{version} -p1
 # Remove bundled egg-info
 rm -rf python_%{module}.egg-info
 
