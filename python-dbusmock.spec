@@ -37,7 +37,7 @@ the state of the real services to what you expect in your tests.
 #------------------------------------------------
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -n python_%{module}-%{version} -p1
 # Remove bundled egg-info
 rm -rf python_%{module}.egg-info
 
