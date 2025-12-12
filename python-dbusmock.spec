@@ -2,7 +2,7 @@
 
 Name:		python-%{module}
 Version:	0.36.0
-Release:	1
+Release:	2
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
