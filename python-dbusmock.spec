@@ -1,30 +1,30 @@
 %define module	dbusmock
 
 Name:		python-%{module}
-Version:	0.36.0
-Release:	2
+Version:	0.37.2
+Release:	1
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
 URL:		https://pypi.python.org/pypi/python-dbusmock
 # http://pypi.io/packages/source/p/%%{name}/%%{name}-%%{version}.tar.gz
-Source0:	https://github.com/martinpitt/python-dbusmock/releases/download/%{version}/dist.%{name}-%{version}.tar.gz
+Source0:	https://github.com/martinpitt/python-dbusmock/releases/download/%{version}/python_%{module}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	dbus-x11
 BuildRequires:	upower
 
 BuildRequires:	pkgconfig(python)
-BuildRequires:	python3dist(setuptools)
-BuildRequires:	python3dist(nose)
+BuildRequires:	python%{pyver}dist(setuptools)
+#BuildRequires:	python3dist(nose)
 BuildRequires:  python-dbus
 BuildRequires:	pkgconfig(dbus-python)	
 BuildRequires:	pkgconfig(pygobject-3.0)
-BuildRequires:  python3dist(pygobject)
-BuildRequires:  python3dist(pip)
+BuildRequires:  python%{pyver}dist(pygobject)
+BuildRequires:  python%{pyver}dist(pip)
 
 Requires:	dbus-x11
 Requires:	python-dbus
-Requires:	python3dist(pygobject)
+Requires:	python%{pyver}dist(pygobject)
 %{?python_provide:%python_provide python-%{module}}
 
 %description
