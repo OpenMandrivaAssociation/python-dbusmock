@@ -3,7 +3,7 @@
 
 Name:		python-dbusmock
 Version:	0.38.1
-Release:	2
+Release:	3
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
@@ -15,7 +15,7 @@ BuildArch:	noarch
 BuildRequires:	dbus-x11
 BuildRequires:	upower
 BuildRequires:	pkgconfig(dbus-python)
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(pygobject-3.0)
 BuildRequires:	python%{pyver}dist(dbus-python)
 BuildRequires:	python%{pyver}dist(pygobject)
