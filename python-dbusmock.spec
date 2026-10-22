@@ -3,7 +3,7 @@
 
 Name:		python-dbusmock
 Version:	0.38.1
-Release:	3
+Release:	4
 Summary:	Mock D-Bus objects
 Group:		Development/Python
 License:	LGPLv3+
